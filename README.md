@@ -1,5 +1,5 @@
-# 2D Platformer Starter Kit
-
+Preview# 2D Platformer Starter Kit
+by tharm atoyram
 This starter kit provides all the essential mechanics needed to build a complete 2D platformer game in Godot 4.7. It is designed as a hands-on learning resource for students taking the **Computer Game Development** course at the **College of Computing, Khon Kaen University**.
 
 ## Preview
@@ -89,3 +89,4 @@ Assets/
 
 **Modified for Educational Use By**
 - College of Computing, Khon Kaen University
+"# GAME4" 
