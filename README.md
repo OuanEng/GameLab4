@@ -28,14 +28,11 @@
 
 ## ภาพตัวอย่าง
 
-เมื่อบันทึกภาพการเล่นแล้ว ให้วางไฟล์ไว้ที่ `docs/demo1.jpg` และ `docs/demo2.jpg`
-
-<img src="docs/demo1.jpg" width="300" alt="ภาพตัวอย่างเกมด่าน 1">
-<img src="docs/demo2.jpg" width="300" alt="ภาพตัวอย่างเกมด่าน 2">
+<img src="docs/demo1.png" width="700" alt="ภาพตัวอย่างเกมด่าน 4">
 
 ## Demo และเกมออนไลน์
 
 - Demo VDO: เพิ่มลิงก์ Google Drive หรือ YouTube ที่นี่
-- Play Game: เพิ่มลิงก์ GitHub Pages ที่นี่
+- Play Game: [https://ouaneng.github.io/GameLab4/](https://ouaneng.github.io/GameLab4/)
 
 ไฟล์ Web export อยู่ในโฟลเดอร์ `docs` โดยใช้ `index.html` เป็นหน้าเริ่มต้น
