@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://Scenes/Prefabs/button_restart.gd" id="1_script"]
+
+[node name="btnRestart" type="Button"]
+offset_right = 126.0
+offset_bottom = 54.0
+text = "Play Again"
+script = ExtResource("1_script")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

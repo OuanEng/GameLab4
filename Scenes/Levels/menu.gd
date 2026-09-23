@@ -8,10 +8,9 @@ func _ready() -> void:
 	btn_continue.disabled = !GameManager.has_gamesaved()
 	GameManager.load_option()
 
-	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 

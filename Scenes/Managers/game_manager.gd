@@ -15,6 +15,7 @@ var player :Player = null
 var current_level : String = "res://Scenes/Levels/level_01.tscn"
 var save_path := "user://game.save"
 var save_player_position = Vector2.ZERO
+var is_respawning := false
 
 # Adds 1 to score variable
 func add_score(v=1):
@@ -29,12 +30,16 @@ func restart():
 	hp = 100
 	life = 4
 	save_player_position = Vector2.ZERO
+	is_respawning = false
 	get_tree().change_scene_to_file("res://Scenes/Levels/level_01.tscn")
 
 
 func damage(val=1):
-	hp = hp - val
-	if hp <=0 :
+	if is_respawning:
+		return
+	hp = max(hp - val, 0)
+	AudioManager.death_sfx.play()
+	if hp <= 0:
 		death()
 func add_hp(val=1):
 	hp = hp + val
@@ -52,11 +57,18 @@ func add_life():
 		life += 1
 
 func death():
+	if is_respawning:
+		return
+	is_respawning = true
 	if player != null:
 		await player.death_tween()
 	life -= 1
 	if life <= 0:
-		get_tree().change_scene_to_file("res://Scenes/Levels/game_over.tscn")	
+		hp = 0
+		get_tree().change_scene_to_file("res://Scenes/Levels/game_over.tscn")
+	else:
+		hp = max_hp
+	is_respawning = false
 
 func save_option():
 	var file = FileAccess.open("user://option.json", FileAccess.WRITE)
@@ -88,7 +100,8 @@ func save_game():
 			"current_level" : current_level,
 			"player" : [pos.x, pos.y],
 			"score": score,
-			"life" : life
+			"life" : life,
+			"hp" : hp
 		}
 		var json_text = JSON.stringify(payload, "  ")
 		file.store_pascal_string(json_text)
@@ -106,6 +119,7 @@ func load_game():
 		current_level = data.get("current_level", current_level)
 		score = data.get("score", score)
 		life = data.get("life", 4)
+		hp = data.get("hp", max_hp)
 		var pos = data.get("player",[0,0])
 		save_player_position = Vector2(pos[0],pos[1])
 		get_tree().change_scene_to_file(current_level)

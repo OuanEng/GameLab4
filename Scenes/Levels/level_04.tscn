@@ -1,0 +1,171 @@
+[gd_scene format=4]
+
+[ext_resource type="PackedScene" uid="uid://bjntpxb1c8jxn" path="res://Scenes/Levels/base_level.tscn" id="1_l0dwn"]
+[ext_resource type="PackedScene" uid="uid://b46lxwc5r3dy4" path="res://Scenes/Levels/game_win.tscn" id="2_wf6s8"]
+[ext_resource type="PackedScene" uid="uid://cb8e62red7kc0" path="res://Scenes/Prefabs/trap_1.tscn" id="3_bmcj7"]
+[ext_resource type="PackedScene" uid="uid://bfmh3fm2de78o" path="res://Scenes/Prefabs/coin.tscn" id="3_dbq10"]
+[ext_resource type="TileSet" uid="uid://bvk6vx5i1riqd" path="res://Scenes/Prefabs/ground_tile_set.tres" id="3_qelns"]
+[ext_resource type="PackedScene" uid="uid://ek7hxkqp2wff" path="res://Scenes/Actors/monster_slim.tscn" id="5_mb1if"]
+[ext_resource type="PackedScene" uid="uid://bp4l1nlnh8oq1" path="res://Scenes/Prefabs/trap_2.tscn" id="5_qelns"]
+[ext_resource type="PackedScene" uid="uid://dabag2r57aued" path="res://Scenes/Prefabs/heal_potion.tscn" id="6_mb1if"]
+[ext_resource type="Theme" uid="uid://d3eng5cvycmjf" path="res://Scenes/Prefabs/theme.tres" id="6_taws2"]
+[ext_resource type="PackedScene" uid="uid://b48s52q3f64kl" path="res://Scenes/Actors/monster_mushroom.tscn" id="7_mb1if"]
+[ext_resource type="PackedScene" path="res://Scenes/Prefabs/moving_platform.tscn" id="8_move"]
+[ext_resource type="PackedScene" path="res://Scenes/Prefabs/jump_pad.tscn" id="9_jump"]
+[ext_resource type="PackedScene" path="res://Scenes/Prefabs/portal_gate.tscn" id="10_portal"]
+
+[node name="BaseLevel" unique_id=1997201631 instance=ExtResource("1_l0dwn")]
+
+[node name="LevelFinishDoor" parent="." index="0" unique_id=1788542095]
+position = Vector2(1329, 145)
+next_scene = ExtResource("2_wf6s8")
+
+[node name="Background1" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="0" unique_id=1072429833]
+metadata/_edit_lock_ = true
+
+[node name="Ground" type="TileMapLayer" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="1" unique_id=647673462]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAAAAcAAAADAAEAAAABAAcAAAADAAEAAAACAAcAAAADAAEAAAADAAcAAAAAAAEAAAAEAAcAAAAAAAEAAAANAAcAAAAAAAEAAAAOAAcAAAAAAAEAAAAPAAcAAAAAAAEAAAAQAAcAAAAAAAEAAAD//wcAAAADAAEAAAD//wYAAAAAAAEAAAAFAAcAAAAAAAEAAAARAAcAAAAAAAEAAAASAAcAAAAAAAEAAAATAAcAAAAGAAAAAAAUAAcAAAAGAAAAAAAVAAcAAAAGAAAAAAAWAAcAAAAGAAAAAAAXAAcAAAAGAAAAAAAMAAcAAAAAAAEAAAALAAcAAAAAAAEAAAAKAAcAAAAAAAEAAAAJAAcAAAAAAAEAAAAAAAYAAAAAAAEAAAABAAYAAAAAAAEAAAACAAYAAAAAAAEAAAD+/wUAAAADAAEAAAD+/wYAAAADAAEAAAD+/wQAAAADAAEAAAD+/wMAAAADAAEAAAD+/wIAAAADAAEAAAD+/wEAAAADAAEAAAAIAAcAAAAAAAEAAAD+/wcAAAADAAEAAAD+/wgAAAADAAEAAAD+/wkAAAADAAEAAAD//wkAAAADAAEAAAD//wgAAAADAAEAAAAGAAgAAAADAAEAAAAGAAkAAAADAAEAAAAHAAkAAAADAAEAAAAHAAgAAAADAAEAAAALAAgAAAADAAEAAAAMAAgAAAADAAEAAAAMAAkAAAADAAEAAAALAAkAAAADAAEAAAAGAAoAAAADAAEAAAAGAAsAAAADAAEAAAAGAAwAAAADAAEAAAAGAA0AAAADAAEAAAAHAA0AAAADAAEAAAAHAAwAAAADAAEAAAAHAAsAAAADAAEAAAAHAAoAAAADAAEAAAD+/woAAAADAAEAAAD+/wsAAAADAAEAAAD+/wwAAAADAAEAAAD+/w0AAAADAAEAAAD//w0AAAADAAEAAAD//wwAAAADAAEAAAD//wsAAAADAAEAAAD//woAAAADAAEAAAALAAoAAAADAAEAAAALAAsAAAADAAEAAAALAAwAAAADAAEAAAALAA0AAAADAAEAAAAMAA0AAAADAAEAAAAMAAwAAAADAAEAAAAMAAsAAAADAAEAAAAMAAoAAAADAAEAAAASAAgAAAADAAEAAAASAAkAAAADAAEAAAASAAoAAAADAAEAAAASAAsAAAADAAEAAAASAAwAAAADAAEAAAASAA0AAAADAAEAAAARAA0AAAADAAEAAAARAAwAAAADAAEAAAARAAsAAAADAAEAAAARAAoAAAADAAEAAAARAAkAAAADAAEAAAARAAgAAAADAAEAAAAMAAYAAAADAAMAAAANAAYAAAADAAMAAAAOAAYAAAADAAMAAAAVAAgAAAAGAAAAAAAUAAgAAAAGAAAAAAAWAAgAAAAGAAAAAAAWAAYAAAAGAAAAAAAWAAUAAAAGAAAAAAAWAAQAAAAGAAAAAAAWAAMAAAAGAAAAAAAXAAMAAAAGAAAAAAAXAAQAAAAGAAAAAAAXAAUAAAAGAAAAAAAXAAYAAAAGAAAAAAAXAAgAAAAGAAAAAAATAAkAAAAGAAAAAAAUAAkAAAAGAAAAAAATAAgAAAAGAAAAAAAVAAkAAAAGAAAAAAAWAAkAAAAGAAAAAAAXAAkAAAAGAAAAAAAXAAIAAAAGAAAAAAAWAAIAAAAGAAAAAAAWAAEAAAAGAAAAAAAXAAEAAAAGAAAAAAA=")
+tile_set = ExtResource("3_qelns")
+
+[node name="Background2" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="2" unique_id=1070008654]
+metadata/_edit_lock_ = true
+
+[node name="Trap1" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="3" unique_id=242563240 instance=ExtResource("3_bmcj7")]
+position = Vector2(540, 478)
+
+[node name="Trap2" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="4" unique_id=212853376 instance=ExtResource("3_bmcj7")]
+position = Vector2(900, 478)
+
+[node name="Trap3" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="5" unique_id=1894763376 instance=ExtResource("5_qelns")]
+position = Vector2(1020, 157)
+
+[node name="Trap4" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="6" unique_id=1970758885 instance=ExtResource("5_qelns")]
+position = Vector2(1260, 93)
+rotation = 4.712389
+
+[node name="HealPotion" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="0" unique_id=1169891267 instance=ExtResource("6_mb1if")]
+position = Vector2(1025, 374)
+
+[node name="Coin" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="1" unique_id=251510796 instance=ExtResource("3_dbq10")]
+position = Vector2(454.99997, 295.99997)
+rotation = 0.2617994
+
+[node name="Coin2" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="2" unique_id=959644230 instance=ExtResource("3_dbq10")]
+position = Vector2(455, 342)
+
+[node name="Coin3" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="3" unique_id=1453669841 instance=ExtResource("3_dbq10")]
+position = Vector2(881, 267)
+
+[node name="Coin4" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="4" unique_id=941174960 instance=ExtResource("3_dbq10")]
+position = Vector2(927, 267)
+
+[node name="Enemy" parent="Enemies" parent_id_path=PackedInt32Array(1580630701) index="0" unique_id=600502477 instance=ExtResource("7_mb1if")]
+position = Vector2(807, 374)
+speed = 30.0
+metadata/_edit_lock_ = true
+
+[node name="Enemy4" parent="Enemies" parent_id_path=PackedInt32Array(1580630701) index="1" unique_id=1374649901 instance=ExtResource("7_mb1if")]
+position = Vector2(1320, 374)
+speed = 30.0
+
+[node name="Enemy3" parent="Enemies" parent_id_path=PackedInt32Array(1580630701) index="2" unique_id=265544775 instance=ExtResource("7_mb1if")]
+position = Vector2(410, 423)
+speed = 50.0
+
+[node name="Enemy5" parent="Enemies" parent_id_path=PackedInt32Array(1580630701) index="3" unique_id=517355601 instance=ExtResource("5_mb1if")]
+position = Vector2(585, 448)
+speed = 20.0
+
+[node name="OpeningLift" parent="Level" instance=ExtResource("8_move")]
+position = Vector2(330, 370)
+travel = Vector2(0, -210)
+duration = 2.8
+
+[node name="CrossPlatformA" parent="Level" instance=ExtResource("8_move")]
+position = Vector2(560, 225)
+travel = Vector2(210, 0)
+duration = 3.4
+
+[node name="CrossPlatformB" parent="Level" instance=ExtResource("8_move")]
+position = Vector2(960, 315)
+travel = Vector2(-190, 0)
+duration = 3.0
+
+[node name="FinalLift" parent="Level" instance=ExtResource("8_move")]
+position = Vector2(1140, 350)
+travel = Vector2(0, -220)
+duration = 2.6
+
+[node name="DoorPlatform" parent="Level" instance=ExtResource("8_move")]
+position = Vector2(1329, 210)
+travel = Vector2(0, 0)
+
+[node name="JumpPadA" parent="Level" instance=ExtResource("9_jump")]
+position = Vector2(210, 470)
+launch_force = 820.0
+
+[node name="JumpPadB" parent="Level" instance=ExtResource("9_jump")]
+position = Vector2(840, 405)
+launch_force = 900.0
+
+[node name="PortalEntrance" parent="Level" instance=ExtResource("10_portal")]
+position = Vector2(455, 405)
+target_path = NodePath("../PortalExit")
+
+[node name="PortalExit" parent="Level" instance=ExtResource("10_portal")]
+position = Vector2(1030, 145)
+target_path = NodePath("../PortalEntrance")
+
+[node name="FinalCoin1" parent="Coins" instance=ExtResource("3_dbq10")]
+position = Vector2(330, 130)
+
+[node name="FinalCoin2" parent="Coins" instance=ExtResource("3_dbq10")]
+position = Vector2(620, 165)
+
+[node name="FinalCoin3" parent="Coins" instance=ExtResource("3_dbq10")]
+position = Vector2(850, 240)
+
+[node name="FinalCoin4" parent="Coins" instance=ExtResource("3_dbq10")]
+position = Vector2(1140, 105)
+
+[node name="FinalCoin5" parent="Coins" instance=ExtResource("3_dbq10")]
+position = Vector2(1329, 85)
+
+[node name="Label" parent="UserInterface" parent_id_path=PackedInt32Array(1799764374) index="1" unique_id=1103718868]
+offset_left = -99.0
+offset_top = -39.5
+offset_right = 99.0
+offset_bottom = 39.5
+theme_override_colors/font_color = Color(0.5529412, 0.38431373, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "Level 4"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Text" parent_id_path=PackedInt32Array(416249055) index="0" unique_id=2000774536]
+offset_left = -57.0
+offset_top = 105.0
+offset_right = 285.0
+offset_bottom = 234.0
+theme = ExtResource("6_taws2")
+text = "ด่านที่ 4 — ป้อมปราการสุดท้าย
+A D เพื่อเดิน
+Space กระโดด
+ใช้แท่นเลื่อน หลบกับดัก และฝ่าศัตรูไปยังประตูชัย"
+
+[node name="Label2" type="Label" parent="Text" parent_id_path=PackedInt32Array(416249055) index="1" unique_id=1040528611]
+offset_left = 984.0
+offset_top = 267.0
+offset_right = 1241.0
+offset_bottom = 318.0
+theme = ExtResource("6_taws2")
+text = "เข้าประตูเพื่อไปด่านต่อไป"
+
+[node name="Label3" type="Label" parent="Text" parent_id_path=PackedInt32Array(416249055) index="2" unique_id=2099774084]
+offset_left = 328.0
+offset_top = 524.0
+offset_right = 585.0
+offset_bottom = 575.0
+theme = ExtResource("6_taws2")
+text = "ใช้ประตูวาร์ปเพื่อข้ามแนวกับดัก แล้วขึ้นลิฟต์สุดท้าย"

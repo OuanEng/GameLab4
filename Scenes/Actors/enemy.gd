@@ -51,6 +51,8 @@ func _on_hit_area_body_entered(body: Node2D) -> void:
 		body.queue_free()
 		
 func death_tween():
+	if not alive:
+		return
 	alive = false
 	collision_layer = 0
 	$Sprite.hide()

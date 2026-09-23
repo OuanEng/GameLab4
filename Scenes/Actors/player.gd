@@ -118,7 +118,6 @@ func flip_player():
 
 # Tween Animations
 func death_tween():
-	AudioManager.death_sfx.play()
 	death_particles.emitting = true
 	movement_enabled = false
 	var tween = create_tween()
@@ -156,9 +155,20 @@ func damage_tween():
 # Reset the player's position to the current level spawn point if collided with any trap
 func _on_collision_body_entered(body):
 	if body.is_in_group("Traps"):
-		hit_trap.emit()
-	if !can_damage : return
+		if can_damage:
+			damage_tween()
+			hit_trap.emit()
+			velocity.y = -350
+		return
+	if !can_damage:
+		return
 	if body.is_in_group("Enemy"):
+		# Falling onto an enemy defeats it; side contact hurts the player.
+		if velocity.y > 0 and global_position.y < body.global_position.y - 8:
+			velocity.y = -jump_force * 0.55
+			GameManager.add_score(5)
+			body.death_tween()
+			return
 		var dx = body.position.x - position.x
 		velocity.y = -400
 		if dx > 0:

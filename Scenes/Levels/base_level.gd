@@ -16,7 +16,7 @@ func _on_player_hit_enemy() -> void:
 	GameManager.damage(5)	
 
 func _on_player_hit_trap() -> void:
-	GameManager.death()
+	GameManager.damage(25)
 
 
 func _on_music_player_finished() -> void:
